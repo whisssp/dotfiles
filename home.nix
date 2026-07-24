@@ -1,31 +1,32 @@
 { config, pkgs, user, ... }:
-
 let
   dotfiles = "${config.home.homeDirectory}/.dotfiles";
 in
-
 {
   home.username = user;
-  home.homeDirectory = "/Users/${user}";
+  home.homeDirectory = "/home/${user}";
   home.stateVersion = "24.11";
+
   home.packages = with pkgs; [
-    # cli i use constantly
-    ripgrep   # fast search
-    fd        # fast find
-    fzf       # fuzzy finder
-    jq        # json on the command line
+    ripgrep
+    fd
+    fzf
+    jq
     lazygit
     neovim
-    # the font everything renders in
     nerd-fonts.hack
+    wezterm      # was a Homebrew cask
+    claude-code  # was a Homebrew cask — see note below
   ];
+
   fonts.fontconfig.enable = true;
   home.sessionVariables.EDITOR = "nvim";
+  programs.home-manager.enable = true;
 
   programs.zsh = {
     enable = true;
-    autosuggestion.enable = true;      # ghost text from history
-    syntaxHighlighting.enable = true;  # commands turn green when valid
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
     initContent = ''
       bindkey '^f' autosuggest-accept
     '';
@@ -53,7 +54,6 @@ in
     };
   };
 
-  # Edit-in-place: the real file stays in my repo, ~/.config just points at it.
   home.file.".config/wezterm".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/wezterm";
   home.file.".config/nvim".source =
@@ -62,7 +62,6 @@ in
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/herdr";
   home.file.".claude/settings.json".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.claude/settings.json";
-
   home.file.".claude/CLAUDE.md".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
   home.file.".codex/AGENTS.md".source =
