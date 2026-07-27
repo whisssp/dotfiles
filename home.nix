@@ -1,9 +1,7 @@
 { config, pkgs, user, ... }:
 
 let
-  dotfiles = "${config.home.homeDirectory}/.dotfiles";
-in
-
+  dotfiles = "${config.home.homeDirectory}/.dotfiles"; in
 {
   home.username = user;
   home.homeDirectory = "/Users/${user}";
@@ -28,6 +26,7 @@ in
     syntaxHighlighting.enable = true;  # commands turn green when valid
     initContent = ''
       bindkey '^f' autosuggest-accept
+
     '';
     shellAliases = {
       ".." = "cd ..";
@@ -35,8 +34,9 @@ in
       push = "git push";
       pull = "git pull";
       m = "git switch main";
-      cc = "claude --dangerously-skip-permissions";
-      co = "codex --full-auto";
+      cc = "claude";
+      aliados= "cd /Users/jasonhoang/go/src/bitbucket.org/app-squad/qtienda-aliados-api";
+      qtienda-api = "cd /Users/jasonhoang/Desktop/qtienda-api";
     };
   };
 
@@ -64,9 +64,5 @@ in
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.claude/settings.json";
 
   home.file.".claude/CLAUDE.md".source =
-    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
-  home.file.".codex/AGENTS.md".source =
-    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
-  home.file.".config/opencode/AGENTS.md".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
 }

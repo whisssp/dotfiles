@@ -28,6 +28,7 @@
   nix-homebrew = {
     enable = true;
     inherit user;
+    autoMigrate = true;
   };
   homebrew = {
     enable = true;
@@ -36,6 +37,8 @@
     onActivation.extraFlags = [ "--force" ];
     brews = [
       "herdr"
+      "awsebcli"
+      "redis"
     ];
     casks = [
       "wezterm"
