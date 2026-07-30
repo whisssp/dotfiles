@@ -23,6 +23,11 @@ in
   home.sessionVariables.EDITOR = "nvim";
   programs.home-manager.enable = true;
 
+  programs.git.settings.user = {
+    name = "whisper";
+    email = "tnghia1408@gmail.com";
+  };
+
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
@@ -38,6 +43,7 @@ in
       m = "git switch main";
       cc = "claude --dangerously-skip-permissions";
       co = "codex --full-auto";
+      wins-home = "cd /mnt/c/Users/ADMIN";
     };
   };
 
