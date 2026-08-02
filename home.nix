@@ -21,6 +21,7 @@ in
 
   fonts.fontconfig.enable = true;
   home.sessionVariables.EDITOR = "nvim";
+  home.sessionPath = [ "${config.home.homeDirectory}/.local/bin" ];
   programs.home-manager.enable = true;
 
   programs.git.settings.user = {
