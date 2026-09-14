@@ -17,6 +17,7 @@ in
     nerd-fonts.hack
     wezterm      # was a Homebrew cask
     claude-code  # was a Homebrew cask — see note below
+    nmap
   ];
 
   fonts.fontconfig.enable = true;
