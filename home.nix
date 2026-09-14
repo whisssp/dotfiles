@@ -51,7 +51,7 @@ in
   programs.starship = {
     enable = true;
     settings = {
-      command_timeout = 300;
+      command_timeout = 1000;
       add_newline = false;
       format = "$directory$git_branch$git_status$cmd_duration$line_break$character";
       character = {
