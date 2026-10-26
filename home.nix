@@ -18,6 +18,7 @@ in
     wezterm      # was a Homebrew cask
     claude-code  # was a Homebrew cask — see note below
     nmap
+    ngrok
   ];
 
   fonts.fontconfig.enable = true;
