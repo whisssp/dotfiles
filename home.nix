@@ -1,6 +1,6 @@
 { config, pkgs, user, ... }:
 let
-  dotfiles = "${config.home.homeDirectory}/.dotfiles";
+dotfiles = "${config.home.homeDirectory}/.dotfiles";
 in
 {
   home.username = user;
@@ -9,16 +9,16 @@ in
 
   home.packages = with pkgs; [
     ripgrep
-    fd
-    fzf
-    jq
-    lazygit
-    neovim
-    nerd-fonts.hack
-    wezterm      # was a Homebrew cask
-    claude-code  # was a Homebrew cask — see note below
-    nmap
-    ngrok
+      fd
+      fzf
+      jq
+      lazygit
+      neovim
+      nerd-fonts.hack
+      wezterm      # was a Homebrew cask
+      claude-code  # was a Homebrew cask — see note below
+      nmap
+      ngrok
   ];
 
   fonts.fontconfig.enable = true;
@@ -37,6 +37,14 @@ in
     syntaxHighlighting.enable = true;
     initContent = ''
       bindkey '^f' autosuggest-accept
+
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+      hw() {
+        local dir="''${1:-$PWD}"
+          herdr workspace create --cwd "$dir" --label "$(basename "$dir")" --focus >/dev/null
+      }
     '';
     shellAliases = {
       ".." = "cd ..";

@@ -11,6 +11,6 @@
   "effortLevel": "high",
   "theme": "dark-ansi",
   "permissions": {
-    "blockReadsOutsideWorkingDirectories": true
+    "blockReadsOutsideWorkingDirectories": false
   }
 }
