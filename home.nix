@@ -19,6 +19,7 @@ in
       claude-code  # was a Homebrew cask — see note below
       nmap
       ngrok
+      redis
   ];
 
   fonts.fontconfig.enable = true;
