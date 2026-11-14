@@ -16,6 +16,8 @@ let
     neovim
     # the font everything renders in
     nerd-fonts.hack
+    redis
+    ngrok
   ];
   fonts.fontconfig.enable = true;
   home.sessionVariables.EDITOR = "nvim";
