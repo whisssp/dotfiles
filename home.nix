@@ -30,6 +30,8 @@ let
     initContent = ''
       bindkey '^f' autosuggest-accept
 
+      # gvm (Go version manager)
+      [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
     '';
     shellAliases = {
       ".." = "cd ..";
