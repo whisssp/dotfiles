@@ -18,6 +18,7 @@ let
     nerd-fonts.hack
     redis
     ngrok
+    delve
   ];
   fonts.fontconfig.enable = true;
   home.sessionVariables.EDITOR = "nvim";
