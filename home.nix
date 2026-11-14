@@ -34,9 +34,8 @@ let
       push = "git push";
       pull = "git pull";
       m = "git switch main";
-      cc = "claude";
-      aliados= "cd /Users/jasonhoang/go/src/bitbucket.org/app-squad/qtienda-aliados-api";
-      qtienda-api = "cd /Users/jasonhoang/Desktop/qtienda-api";
+      aliados= "cd /Users/nguyentrongnghia/Documents/quqo/source/qtienda-aliados-api";
+      qtienda-api = "cd /Users/nguyentrongnghia/Documents/quqo/source/qtienda-api";
     };
   };
 
